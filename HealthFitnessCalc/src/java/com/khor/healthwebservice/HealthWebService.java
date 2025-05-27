@@ -77,9 +77,9 @@ public class HealthWebService {
     public int calculateAge(
             @WebParam(name = "idNumber") String idNumber) {
         
-        String cleanedId = idNumber.replace("-", "");
+        // valid - String cleanedId = idNumber.replace("-", "");
 
-        String birthDatePart = cleanedId.substring(0, 6); // YYMMDD - 010805
+        String birthDatePart = idNumber.substring(0, 6); // YYMMDD - 010805
         int year = Integer.parseInt(birthDatePart.substring(0, 2)); // 01
         int month = Integer.parseInt(birthDatePart.substring(2, 4)); // 08
         int day = Integer.parseInt(birthDatePart.substring(4, 6)); // 05
