@@ -26,13 +26,210 @@ public interface HealthWebService {
 
     /**
      * 
+     * @param idNumber
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calcAge", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcAge")
+    @ResponseWrapper(localName = "calcAgeResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcAgeResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calcAgeRequest", output = "http://healthwebservice.khor.com/HealthWebService/calcAgeResponse")
+    public int calcAge(
+        @WebParam(name = "idNumber", targetNamespace = "")
+        String idNumber);
+
+    /**
+     * 
+     * @param weight
+     * @param height
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calcBMIValue", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcBMIValue")
+    @ResponseWrapper(localName = "calcBMIValueResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcBMIValueResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calcBMIValueRequest", output = "http://healthwebservice.khor.com/HealthWebService/calcBMIValueResponse")
+    public double calcBMIValue(
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight,
+        @WebParam(name = "height", targetNamespace = "")
+        double height);
+
+    /**
+     * 
+     * @param gender
+     * @param age
+     * @param bmi
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calcBFPValue", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcBFPValue")
+    @ResponseWrapper(localName = "calcBFPValueResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcBFPValueResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calcBFPValueRequest", output = "http://healthwebservice.khor.com/HealthWebService/calcBFPValueResponse")
+    public double calcBFPValue(
+        @WebParam(name = "age", targetNamespace = "")
+        int age,
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender,
+        @WebParam(name = "bmi", targetNamespace = "")
+        double bmi);
+
+    /**
+     * 
+     * @param bfpValue
+     * @param gender
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBFPCategories", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetBFPCategories")
+    @ResponseWrapper(localName = "getBFPCategoriesResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetBFPCategoriesResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/getBFPCategoriesRequest", output = "http://healthwebservice.khor.com/HealthWebService/getBFPCategoriesResponse")
+    public String getBFPCategories(
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender,
+        @WebParam(name = "bfpValue", targetNamespace = "")
+        double bfpValue);
+
+    /**
+     * 
+     * @param gender
+     * @param weight
+     * @param age
+     * @param height
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calcBMRValue", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcBMRValue")
+    @ResponseWrapper(localName = "calcBMRValueResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcBMRValueResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calcBMRValueRequest", output = "http://healthwebservice.khor.com/HealthWebService/calcBMRValueResponse")
+    public double calcBMRValue(
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender,
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight,
+        @WebParam(name = "height", targetNamespace = "")
+        double height,
+        @WebParam(name = "age", targetNamespace = "")
+        int age);
+
+    /**
+     * 
+     * @param bmi
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBMICategories", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetBMICategories")
+    @ResponseWrapper(localName = "getBMICategoriesResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetBMICategoriesResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/getBMICategoriesRequest", output = "http://healthwebservice.khor.com/HealthWebService/getBMICategoriesResponse")
+    public String getBMICategories(
+        @WebParam(name = "bmi", targetNamespace = "")
+        double bmi);
+
+    /**
+     * 
+     * @param bmrValue
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBMRCategories", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetBMRCategories")
+    @ResponseWrapper(localName = "getBMRCategoriesResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetBMRCategoriesResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/getBMRCategoriesRequest", output = "http://healthwebservice.khor.com/HealthWebService/getBMRCategoriesResponse")
+    public String getBMRCategories(
+        @WebParam(name = "bmrValue", targetNamespace = "")
+        double bmrValue);
+
+    /**
+     * 
+     * @param lbm
+     * @param weight
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getLBMCategories", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetLBMCategories")
+    @ResponseWrapper(localName = "getLBMCategoriesResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetLBMCategoriesResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/getLBMCategoriesRequest", output = "http://healthwebservice.khor.com/HealthWebService/getLBMCategoriesResponse")
+    public String getLBMCategories(
+        @WebParam(name = "lbm", targetNamespace = "")
+        double lbm,
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight);
+
+    /**
+     * 
+     * @param gender
+     * @param weight
+     * @param height
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calcLBMValue", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcLBMValue")
+    @ResponseWrapper(localName = "calcLBMValueResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcLBMValueResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calcLBMValueRequest", output = "http://healthwebservice.khor.com/HealthWebService/calcLBMValueResponse")
+    public double calcLBMValue(
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight,
+        @WebParam(name = "height", targetNamespace = "")
+        double height,
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender);
+
+    /**
+     * 
      * @param duration
+     * @param weight
+     * @param met
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calcCaloriesValue", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcCaloriesValue")
+    @ResponseWrapper(localName = "calcCaloriesValueResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalcCaloriesValueResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calcCaloriesValueRequest", output = "http://healthwebservice.khor.com/HealthWebService/calcCaloriesValueResponse")
+    public double calcCaloriesValue(
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight,
+        @WebParam(name = "duration", targetNamespace = "")
+        double duration,
+        @WebParam(name = "met", targetNamespace = "")
+        double met);
+
+    /**
+     * 
+     * @param caloriesBurned
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCaloriesCategories", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetCaloriesCategories")
+    @ResponseWrapper(localName = "getCaloriesCategoriesResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.GetCaloriesCategoriesResponse")
+    @Action(input = "http://healthwebservice.khor.com/HealthWebService/getCaloriesCategoriesRequest", output = "http://healthwebservice.khor.com/HealthWebService/getCaloriesCategoriesResponse")
+    public String getCaloriesCategories(
+        @WebParam(name = "caloriesBurned", targetNamespace = "")
+        double caloriesBurned);
+
+    /**
+     * 
      * @param gender
      * @param name
-     * @param weight
      * @param idNumber
-     * @param met
-     * @param height
      * @return
      *     returns java.lang.String
      */
@@ -47,134 +244,6 @@ public interface HealthWebService {
         @WebParam(name = "idNumber", targetNamespace = "")
         String idNumber,
         @WebParam(name = "gender", targetNamespace = "")
-        String gender,
-        @WebParam(name = "weight", targetNamespace = "")
-        double weight,
-        @WebParam(name = "height", targetNamespace = "")
-        double height,
-        @WebParam(name = "met", targetNamespace = "")
-        double met,
-        @WebParam(name = "duration", targetNamespace = "")
-        double duration);
-
-    /**
-     * 
-     * @param gender
-     * @param weight
-     * @param age
-     * @param height
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateBMR", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateBMR")
-    @ResponseWrapper(localName = "calculateBMRResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateBMRResponse")
-    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calculateBMRRequest", output = "http://healthwebservice.khor.com/HealthWebService/calculateBMRResponse")
-    public String calculateBMR(
-        @WebParam(name = "gender", targetNamespace = "")
-        String gender,
-        @WebParam(name = "weight", targetNamespace = "")
-        double weight,
-        @WebParam(name = "height", targetNamespace = "")
-        double height,
-        @WebParam(name = "age", targetNamespace = "")
-        int age);
-
-    /**
-     * 
-     * @param gender
-     * @param weight
-     * @param height
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateLBM", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateLBM")
-    @ResponseWrapper(localName = "calculateLBMResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateLBMResponse")
-    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calculateLBMRequest", output = "http://healthwebservice.khor.com/HealthWebService/calculateLBMResponse")
-    public String calculateLBM(
-        @WebParam(name = "weight", targetNamespace = "")
-        double weight,
-        @WebParam(name = "height", targetNamespace = "")
-        double height,
-        @WebParam(name = "gender", targetNamespace = "")
         String gender);
-
-    /**
-     * 
-     * @param duration
-     * @param weight
-     * @param met
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateCBR", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateCBR")
-    @ResponseWrapper(localName = "calculateCBRResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateCBRResponse")
-    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calculateCBRRequest", output = "http://healthwebservice.khor.com/HealthWebService/calculateCBRResponse")
-    public String calculateCBR(
-        @WebParam(name = "weight", targetNamespace = "")
-        double weight,
-        @WebParam(name = "duration", targetNamespace = "")
-        double duration,
-        @WebParam(name = "met", targetNamespace = "")
-        double met);
-
-    /**
-     * 
-     * @param gender
-     * @param age
-     * @param bmi
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateBFP", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateBFP")
-    @ResponseWrapper(localName = "calculateBFPResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateBFPResponse")
-    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calculateBFPRequest", output = "http://healthwebservice.khor.com/HealthWebService/calculateBFPResponse")
-    public String calculateBFP(
-        @WebParam(name = "age", targetNamespace = "")
-        int age,
-        @WebParam(name = "gender", targetNamespace = "")
-        String gender,
-        @WebParam(name = "bmi", targetNamespace = "")
-        double bmi);
-
-    /**
-     * 
-     * @param weight
-     * @param height
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateBMI", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateBMI")
-    @ResponseWrapper(localName = "calculateBMIResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateBMIResponse")
-    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calculateBMIRequest", output = "http://healthwebservice.khor.com/HealthWebService/calculateBMIResponse")
-    public String calculateBMI(
-        @WebParam(name = "weight", targetNamespace = "")
-        double weight,
-        @WebParam(name = "height", targetNamespace = "")
-        double height);
-
-    /**
-     * 
-     * @param idNumber
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateAge", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateAge")
-    @ResponseWrapper(localName = "calculateAgeResponse", targetNamespace = "http://healthwebservice.khor.com/", className = "com.khor.healthclientapp.CalculateAgeResponse")
-    @Action(input = "http://healthwebservice.khor.com/HealthWebService/calculateAgeRequest", output = "http://healthwebservice.khor.com/HealthWebService/calculateAgeResponse")
-    public int calculateAge(
-        @WebParam(name = "idNumber", targetNamespace = "")
-        String idNumber);
 
 }

@@ -4,135 +4,230 @@
 <xsd:import namespace="http://healthwebservice.khor.com/" schemaLocation="http://localhost:8080/HealthFitnessCalc/HealthWebService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="calcAge">
+<part name="parameters" element="tns:calcAge"/>
+</message>
+<message name="calcAgeResponse">
+<part name="parameters" element="tns:calcAgeResponse"/>
+</message>
+<message name="calcBMIValue">
+<part name="parameters" element="tns:calcBMIValue"/>
+</message>
+<message name="calcBMIValueResponse">
+<part name="parameters" element="tns:calcBMIValueResponse"/>
+</message>
+<message name="calcBFPValue">
+<part name="parameters" element="tns:calcBFPValue"/>
+</message>
+<message name="calcBFPValueResponse">
+<part name="parameters" element="tns:calcBFPValueResponse"/>
+</message>
+<message name="getBFPCategories">
+<part name="parameters" element="tns:getBFPCategories"/>
+</message>
+<message name="getBFPCategoriesResponse">
+<part name="parameters" element="tns:getBFPCategoriesResponse"/>
+</message>
+<message name="calcBMRValue">
+<part name="parameters" element="tns:calcBMRValue"/>
+</message>
+<message name="calcBMRValueResponse">
+<part name="parameters" element="tns:calcBMRValueResponse"/>
+</message>
+<message name="getBMICategories">
+<part name="parameters" element="tns:getBMICategories"/>
+</message>
+<message name="getBMICategoriesResponse">
+<part name="parameters" element="tns:getBMICategoriesResponse"/>
+</message>
+<message name="getBMRCategories">
+<part name="parameters" element="tns:getBMRCategories"/>
+</message>
+<message name="getBMRCategoriesResponse">
+<part name="parameters" element="tns:getBMRCategoriesResponse"/>
+</message>
+<message name="getLBMCategories">
+<part name="parameters" element="tns:getLBMCategories"/>
+</message>
+<message name="getLBMCategoriesResponse">
+<part name="parameters" element="tns:getLBMCategoriesResponse"/>
+</message>
+<message name="calcLBMValue">
+<part name="parameters" element="tns:calcLBMValue"/>
+</message>
+<message name="calcLBMValueResponse">
+<part name="parameters" element="tns:calcLBMValueResponse"/>
+</message>
+<message name="calcCaloriesValue">
+<part name="parameters" element="tns:calcCaloriesValue"/>
+</message>
+<message name="calcCaloriesValueResponse">
+<part name="parameters" element="tns:calcCaloriesValueResponse"/>
+</message>
+<message name="getCaloriesCategories">
+<part name="parameters" element="tns:getCaloriesCategories"/>
+</message>
+<message name="getCaloriesCategoriesResponse">
+<part name="parameters" element="tns:getCaloriesCategoriesResponse"/>
+</message>
 <message name="getUserInfo">
 <part name="parameters" element="tns:getUserInfo"/>
 </message>
 <message name="getUserInfoResponse">
 <part name="parameters" element="tns:getUserInfoResponse"/>
 </message>
-<message name="calculateBMR">
-<part name="parameters" element="tns:calculateBMR"/>
-</message>
-<message name="calculateBMRResponse">
-<part name="parameters" element="tns:calculateBMRResponse"/>
-</message>
-<message name="calculateLBM">
-<part name="parameters" element="tns:calculateLBM"/>
-</message>
-<message name="calculateLBMResponse">
-<part name="parameters" element="tns:calculateLBMResponse"/>
-</message>
-<message name="calculateCBR">
-<part name="parameters" element="tns:calculateCBR"/>
-</message>
-<message name="calculateCBRResponse">
-<part name="parameters" element="tns:calculateCBRResponse"/>
-</message>
-<message name="calculateBFP">
-<part name="parameters" element="tns:calculateBFP"/>
-</message>
-<message name="calculateBFPResponse">
-<part name="parameters" element="tns:calculateBFPResponse"/>
-</message>
-<message name="calculateBMI">
-<part name="parameters" element="tns:calculateBMI"/>
-</message>
-<message name="calculateBMIResponse">
-<part name="parameters" element="tns:calculateBMIResponse"/>
-</message>
-<message name="calculateAge">
-<part name="parameters" element="tns:calculateAge"/>
-</message>
-<message name="calculateAgeResponse">
-<part name="parameters" element="tns:calculateAgeResponse"/>
-</message>
 <portType name="HealthWebService">
+<operation name="calcAge">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcAgeRequest" message="tns:calcAge"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcAgeResponse" message="tns:calcAgeResponse"/>
+</operation>
+<operation name="calcBMIValue">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcBMIValueRequest" message="tns:calcBMIValue"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcBMIValueResponse" message="tns:calcBMIValueResponse"/>
+</operation>
+<operation name="calcBFPValue">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcBFPValueRequest" message="tns:calcBFPValue"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcBFPValueResponse" message="tns:calcBFPValueResponse"/>
+</operation>
+<operation name="getBFPCategories">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/getBFPCategoriesRequest" message="tns:getBFPCategories"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/getBFPCategoriesResponse" message="tns:getBFPCategoriesResponse"/>
+</operation>
+<operation name="calcBMRValue">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcBMRValueRequest" message="tns:calcBMRValue"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcBMRValueResponse" message="tns:calcBMRValueResponse"/>
+</operation>
+<operation name="getBMICategories">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/getBMICategoriesRequest" message="tns:getBMICategories"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/getBMICategoriesResponse" message="tns:getBMICategoriesResponse"/>
+</operation>
+<operation name="getBMRCategories">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/getBMRCategoriesRequest" message="tns:getBMRCategories"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/getBMRCategoriesResponse" message="tns:getBMRCategoriesResponse"/>
+</operation>
+<operation name="getLBMCategories">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/getLBMCategoriesRequest" message="tns:getLBMCategories"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/getLBMCategoriesResponse" message="tns:getLBMCategoriesResponse"/>
+</operation>
+<operation name="calcLBMValue">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcLBMValueRequest" message="tns:calcLBMValue"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcLBMValueResponse" message="tns:calcLBMValueResponse"/>
+</operation>
+<operation name="calcCaloriesValue">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcCaloriesValueRequest" message="tns:calcCaloriesValue"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calcCaloriesValueResponse" message="tns:calcCaloriesValueResponse"/>
+</operation>
+<operation name="getCaloriesCategories">
+<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/getCaloriesCategoriesRequest" message="tns:getCaloriesCategories"/>
+<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/getCaloriesCategoriesResponse" message="tns:getCaloriesCategoriesResponse"/>
+</operation>
 <operation name="getUserInfo">
 <input wsam:Action="http://healthwebservice.khor.com/HealthWebService/getUserInfoRequest" message="tns:getUserInfo"/>
 <output wsam:Action="http://healthwebservice.khor.com/HealthWebService/getUserInfoResponse" message="tns:getUserInfoResponse"/>
 </operation>
-<operation name="calculateBMR">
-<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateBMRRequest" message="tns:calculateBMR"/>
-<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateBMRResponse" message="tns:calculateBMRResponse"/>
-</operation>
-<operation name="calculateLBM">
-<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateLBMRequest" message="tns:calculateLBM"/>
-<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateLBMResponse" message="tns:calculateLBMResponse"/>
-</operation>
-<operation name="calculateCBR">
-<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateCBRRequest" message="tns:calculateCBR"/>
-<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateCBRResponse" message="tns:calculateCBRResponse"/>
-</operation>
-<operation name="calculateBFP">
-<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateBFPRequest" message="tns:calculateBFP"/>
-<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateBFPResponse" message="tns:calculateBFPResponse"/>
-</operation>
-<operation name="calculateBMI">
-<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateBMIRequest" message="tns:calculateBMI"/>
-<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateBMIResponse" message="tns:calculateBMIResponse"/>
-</operation>
-<operation name="calculateAge">
-<input wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateAgeRequest" message="tns:calculateAge"/>
-<output wsam:Action="http://healthwebservice.khor.com/HealthWebService/calculateAgeResponse" message="tns:calculateAgeResponse"/>
-</operation>
 </portType>
 <binding name="HealthWebServicePortBinding" type="tns:HealthWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="calcAge">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="calcBMIValue">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="calcBFPValue">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBFPCategories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="calcBMRValue">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBMICategories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBMRCategories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getLBMCategories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="calcLBMValue">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="calcCaloriesValue">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getCaloriesCategories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getUserInfo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="calculateBMR">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="calculateLBM">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="calculateCBR">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="calculateBFP">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="calculateBMI">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="calculateAge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
