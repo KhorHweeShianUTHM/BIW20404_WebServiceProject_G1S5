@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://healthwebservice.khor.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://healthwebservice.khor.com/">
+
+<xs:element name="calcAge" type="tns:calcAge"/>
+
+<xs:element name="calcAgeResponse" type="tns:calcAgeResponse"/>
+
+<xs:element name="calcBFPValue" type="tns:calcBFPValue"/>
+
+<xs:element name="calcBFPValueResponse" type="tns:calcBFPValueResponse"/>
+
+<xs:element name="calcBMIValue" type="tns:calcBMIValue"/>
+
+<xs:element name="calcBMIValueResponse" type="tns:calcBMIValueResponse"/>
+
+<xs:element name="calcBMRValue" type="tns:calcBMRValue"/>
+
+<xs:element name="calcBMRValueResponse" type="tns:calcBMRValueResponse"/>
+
+<xs:element name="calcCaloriesValue" type="tns:calcCaloriesValue"/>
+
+<xs:element name="calcCaloriesValueResponse" type="tns:calcCaloriesValueResponse"/>
+
+<xs:element name="calcLBMValue" type="tns:calcLBMValue"/>
+
+<xs:element name="calcLBMValueResponse" type="tns:calcLBMValueResponse"/>
+
+<xs:element name="getBFPCategories" type="tns:getBFPCategories"/>
+
+<xs:element name="getBFPCategoriesResponse" type="tns:getBFPCategoriesResponse"/>
+
+<xs:element name="getBMICategories" type="tns:getBMICategories"/>
+
+<xs:element name="getBMICategoriesResponse" type="tns:getBMICategoriesResponse"/>
+
+<xs:element name="getBMRCategories" type="tns:getBMRCategories"/>
+
+<xs:element name="getBMRCategoriesResponse" type="tns:getBMRCategoriesResponse"/>
+
+<xs:element name="getCaloriesCategories" type="tns:getCaloriesCategories"/>
+
+<xs:element name="getCaloriesCategoriesResponse" type="tns:getCaloriesCategoriesResponse"/>
+
+<xs:element name="getLBMCategories" type="tns:getLBMCategories"/>
+
+<xs:element name="getLBMCategoriesResponse" type="tns:getLBMCategoriesResponse"/>
+
+<xs:element name="getUserInfo" type="tns:getUserInfo"/>
+
+<xs:element name="getUserInfoResponse" type="tns:getUserInfoResponse"/>
+
+<xs:complexType name="getBMICategories">
+<xs:sequence>
+<xs:element name="bmi" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBMICategoriesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcAge">
+<xs:sequence>
+<xs:element name="idNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcAgeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCaloriesCategories">
+<xs:sequence>
+<xs:element name="caloriesBurned" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCaloriesCategoriesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcBFPValue">
+<xs:sequence>
+<xs:element name="age" type="xs:int"/>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+<xs:element name="bmi" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcBFPValueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLBMCategories">
+<xs:sequence>
+<xs:element name="lbm" type="xs:double"/>
+<xs:element name="weight" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLBMCategoriesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserInfo">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="idNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcCaloriesValue">
+<xs:sequence>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="duration" type="xs:double"/>
+<xs:element name="met" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcCaloriesValueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBMRCategories">
+<xs:sequence>
+<xs:element name="bmrValue" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBMRCategoriesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcBMRValue">
+<xs:sequence>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="height" type="xs:double"/>
+<xs:element name="age" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcBMRValueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBFPCategories">
+<xs:sequence>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+<xs:element name="bfpValue" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBFPCategoriesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcBMIValue">
+<xs:sequence>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="height" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcBMIValueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcLBMValue">
+<xs:sequence>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="height" type="xs:double"/>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calcLBMValueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
